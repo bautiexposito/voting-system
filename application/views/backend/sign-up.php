@@ -77,35 +77,35 @@
                   <div class="row">
                     <div class="form-group col-6">
                       <label>Country</label>
-                      <select class="form-control selectric">
-                        <option>Argentina</option>
-                        <option>China</option>
-                        <option>Mexico</option>
-                        <option>United States</option>
-                        <option>Japon</option>
+                      <select class="form-control selectric" name="country">
+                        <option value="Argentina">Argentina</option>
+                        <option value="China">China</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="United States">United States</option>
+                        <option value="Japon">Japon</option>
                       </select>
                     </div>
                     <div class="form-group col-6">
                       <label>City</label>
-                      <select class="form-control selectric">
-                        <option>West Java</option>
-                        <option>East Java</option>
-                        <option>Lagos</option>
-                        <option>London</option>
+                      <select class="form-control selectric" name="city">
+                        <option value="West Java">West Java</option>
+                        <option value="East Java">East Java</option>
+                        <option value="Lagos">Lagos</option>
+                        <option value="London">London</option>
                       </select>
                     </div>
                   </div>
                   <div class="row">
                     <div class="form-group col-6">
                       <label>Gender</label>
-                      <select name="" id="" class="form-control">
+                      <select name="gender" id="" class="form-control">
                         <option value="Female">Female</option>
                         <option value="Male">Male</option>
                       </select>
                     </div>
                     <div class="form-group col-6">
                       <label>Profile Image</label>
-                      <input type="file" class="form-control">
+                      <input type="file" class="form-control" name="user_file">
                     </div>
                   </div>
 
