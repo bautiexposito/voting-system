@@ -9,12 +9,12 @@
 </head>
 <body class="bg-dark">
 
-    <!-- header menu -->
+    <!-- Header menu -->
     <div class="header container-fluid">
-        <div class="val-col text-white shadow-md mb-3 bg-dark">
+        <div class="nav-col text-white shadow-md mb-3 bg-dark">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 pb-2 align-items-center">
+                    <div class="col-lg-6 pt-3 pb-2 align-items-center">
                         <h4>
                             <span class="text-light fw-bold">E-</span>
                             <span class="text-primary fw-bold">Voting</span>
@@ -40,7 +40,7 @@
         </div>
     </div>
 
-    <!-- main content -->
+    <!-- Main content -->
     <div class="container-fluid bg-dark big-padding">
         <div class="row section-title">
             <h4 class="fs-4 text-white text-center fw-bold">ONLINE VOTING SYSTEM</h4>
@@ -50,7 +50,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-6">
                 <div class="text-white text-center mb-4 votcard shadow-md bg-gradient bg-light p-4 pt-5">
-                    <img class="rounded-pill shadow-md p-2" src="" alt="">
+                    <img class="rounded-pill shadow-md p-2" src="<?php echo base_url();?>/frontend/assets/images/member-01.jpg" alt="Contestant Image">
                     <h4 class="mt-3 fs-5 mb-1 fw-bold">Donald Trump</h4>
                     <h6 class="fs-7">Running to be:
                         <span class="text-primary fw-bold">President</span>
@@ -59,11 +59,18 @@
                     <a href="">
                         <button class="btn btn-primary fw-bolder px-4 ms-2 fs-8">Vote</button>
                     </a>
-                    <button class="btn btn-primary fw-bolder px-4 ms-2 fs-8">
+                    <button class="btn btn-danger fw-bolder px-4 ms-2 fs-8">
                         <small class="badge badge-warning">234</small>
                     </button>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="copy bg-dark">
+        <div class="container">
+            <a href="#">2025 &copy; All Rights Reserved | Footer Notes</a>
         </div>
     </div>
 
