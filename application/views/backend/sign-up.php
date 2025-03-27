@@ -78,29 +78,34 @@
                     <div class="form-group col-6">
                       <label>Country</label>
                       <select class="form-control selectric">
-                        <option>Indonesia</option>
-                        <option>Palestine</option>
-                        <option>Syria</option>
-                        <option>Malaysia</option>
-                        <option>Thailand</option>
+                        <option>Argentina</option>
+                        <option>China</option>
+                        <option>Mexico</option>
+                        <option>United States</option>
+                        <option>Japon</option>
                       </select>
                     </div>
                     <div class="form-group col-6">
-                      <label>Province</label>
+                      <label>City</label>
                       <select class="form-control selectric">
                         <option>West Java</option>
                         <option>East Java</option>
+                        <option>Lagos</option>
+                        <option>London</option>
                       </select>
                     </div>
                   </div>
                   <div class="row">
                     <div class="form-group col-6">
-                      <label>City</label>
-                      <input type="text" class="form-control">
+                      <label>Gender</label>
+                      <select name="" id="" class="form-control">
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                      </select>
                     </div>
                     <div class="form-group col-6">
-                      <label>Postal Code</label>
-                      <input type="text" class="form-control">
+                      <label>Profile Image</label>
+                      <input type="file" class="form-control">
                     </div>
                   </div>
 
