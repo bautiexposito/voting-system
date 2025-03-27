@@ -15,16 +15,22 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="<?php echo base_url();?>backend/assets/css/style.css">
   <link rel="stylesheet" href="<?php echo base_url();?>backend/assets/css/components.css">
-<!-- Start GA -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Start GA -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'UA-94034622-3');
-</script>
-<!-- /END GA --></head>
+    gtag('config', 'UA-94034622-3');
+  </script>
+  <!-- /END GA -->
+  <style>
+    .val-error{
+      color:red;
+    }
+  </style>
+</head>
 
 <body>
   <div id="app">
@@ -35,9 +41,10 @@
            
             <div class="card card-primary">
               <div class="card-header"><h4>Register</h4></div>
+              <?php echo validation_errors('<span class="val-error">', '</span>'); ?>
 
               <div class="card-body">
-                <form method="POST">
+                <form method="POST" action="<?php echo base_url();?>register/addUser/create">
                   <div class="row">
                     <div class="form-group col-6">
                       <label for="frist_name">First Name</label>

@@ -10,7 +10,11 @@ CREATE TABLE users (
     country LONGTEXT  NOT NULL,
     city LONGTEXT  NOT NULL,
     gender LONGTEXT  NOT NULL,
-    user_file LONGTEXT  NOT NULL,
-    login_status INT(11) NOT NULL,
+    user_file LONGTEXT,
+    join_date LONGTEXT,
+    activation_code LONGTEXT,
+    activation_status INT(11),
+    is_contestant INT(11),
+    login_status INT(11),
     PRIMARY KEY (id_user)
 );
