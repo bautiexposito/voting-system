@@ -24,12 +24,12 @@
                     <div class="col-lg-6 d-none d-lg-block">
                         <ul class="float-end mul d-inline-block">
                             <li class="float-md-start px-4 py-3 pe-1">
-                                <a href="<?php echo base_url();?>homecontroller/login">
+                                <a href="<?php echo base_url();?>login">
                                     <button class="btn fw-bold fs-8 btn-outline-light px-5">Login</button>
                                 </a>
                             </li>
                             <li class="float-md-start px-4 py-3 pe-1">
-                                <a href="<?php echo base_url();?>homecontroller/register">
+                                <a href="<?php echo base_url();?>register">
                                     <button class="btn fw-bold fs-8 btn-primary px-5">Create Account</button>
                                 </a>
                             </li>
