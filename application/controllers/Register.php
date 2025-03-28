@@ -16,16 +16,18 @@ class Register extends CI_Controller {
 
 	public function addUser($param1 = "", $param2 = ""){
 		if ($param1 == "create"){
-			$this->form_validation->set_rules('password', 'Password', 'required|min_lenght[4]|max_lenght[16]');
+			$this->form_validation->set_rules('password', 'Password', 'required|min_length[4]|max_length[32]');
 			$this->form_validation->set_rules('password-confirm', 'Confirm Password', 'required|matches[password]');
 			$this->form_validation->set_rules('first_name', 'First Name', 'required');
 			$this->form_validation->set_rules('last_name', 'Last Name', 'required');
-			$this->form_validation->set_rules('email', 'Email', 'valid_email|unique[user.email]|required', array('is_unique' => '%s already exist'));
+			$this->form_validation->set_rules('email', 'Email', 'valid_email|is_unique[users.email]|required', array('is_unique' => '%s already exist'));
 
 			if ($this->form_validation->run() == FALSE){
 				$this->load->view('backend/sign-up');
 			} else{
 				$this->user_model->addUser();
+				$this->session->set_flashdata('message', 'Account created successfully');
+				redirect(base_url() . 'login', 'refresh');
 			}
 		}
 	}

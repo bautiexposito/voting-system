@@ -36,6 +36,20 @@
             <div class="card card-primary">
               <div class="card-header"><h4>Login</h4></div>
 
+              <?php if($this->session->flashdata('message')){?>
+                <div class="alert alert-success text-center">
+                  <?php echo $this->session->flashdata('message');?>
+                </div>
+                <?php unset($_SESSION['message']);
+              }?>
+
+              <?php if($this->session->flashdata('error')){?>
+                <div class="alert alert-danger text-center">
+                  <?php echo $this->session->flashdata('error');?>
+                </div>
+                <?php unset($_SESSION['error']);
+              }?>
+
               <div class="card-body">
                 <form method="POST" action="#" class="needs-validation" novalidate="">
                   <div class="form-group">

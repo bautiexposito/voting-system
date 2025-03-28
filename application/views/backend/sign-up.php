@@ -44,11 +44,11 @@
               <?php echo validation_errors('<span class="val-error">', '</span>'); ?>
 
               <div class="card-body">
-                <form method="POST" action="<?php echo base_url();?>register/addUser/create">
+                <form method="POST" action="<?php echo base_url();?>register/addUser/create" enctype="multipart/form-data">
                   <div class="row">
                     <div class="form-group col-6">
-                      <label for="frist_name">First Name</label>
-                      <input id="frist_name" type="text" class="form-control" name="frist_name" autofocus>
+                      <label for="first_name">First Name</label>
+                      <input id="first_name" type="text" class="form-control" name="first_name" autofocus>
                     </div>
                     <div class="form-group col-6">
                       <label for="last_name">Last Name</label>
@@ -84,7 +84,7 @@
                   <div class="row">
                     <div class="form-group col-6">
                       <label>Country</label>
-                      <select class="form-control selectric" name="country">
+                      <select class="form-control selectric" name="country" required>
                         <option value="Argentina">Argentina</option>
                         <option value="China">China</option>
                         <option value="Mexico">Mexico</option>
@@ -94,7 +94,7 @@
                     </div>
                     <div class="form-group col-6">
                       <label>City</label>
-                      <select class="form-control selectric" name="city">
+                      <select class="form-control selectric" name="city" required>
                         <option value="West Java">West Java</option>
                         <option value="East Java">East Java</option>
                         <option value="Lagos">Lagos</option>
@@ -105,14 +105,14 @@
                   <div class="row">
                     <div class="form-group col-6">
                       <label>Gender</label>
-                      <select name="gender" id="" class="form-control">
+                      <select name="gender" id="" class="form-control" required>
                         <option value="Female">Female</option>
                         <option value="Male">Male</option>
                       </select>
                     </div>
                     <div class="form-group col-6">
                       <label>Profile Image</label>
-                      <input type="file" class="form-control" name="user_file">
+                      <input type="file" class="form-control" name="user_file" required>
                     </div>
                   </div>
 
