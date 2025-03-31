@@ -33,6 +33,18 @@ class Register extends CI_Controller {
 	}
 
 	public function activate(){
-		
+		$id_user = $this->uri->segment(3);
+		$activation_code = $this->uri->segment(4);
+
+		$user = $this->user_model->getUserID($id_user);
+
+		if($user['activation_code'] == $activation_code){
+			$data['activation_status'] = true;
+
+			$query = $this->user_model->activate($data, $id_user);
+
+			$this->session->set_flashdata('message', 'Your account has been activated.');
+			redirect(base_url() . 'register', 'refresh');
+		}
 	}
 }

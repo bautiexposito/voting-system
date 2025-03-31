@@ -106,4 +106,14 @@ class User_model extends CI_Model {
 
         redirect('register');
     }
+
+    function getUserID($id_user){
+        $query = $this->db->get_where('users', array('id_user' => $id_user));
+        return $query->row_array();
+    }
+
+    function activate($data, $id_user){
+        $this->db->where('id_user', $id_user);
+        $this->db->update('users', $data);
+    }
 }
