@@ -31,5 +31,52 @@ class User_model extends CI_Model {
             'pesos_balance' => 0
         );
         $this->db->insert('wallet_balance', $balance);
+
+        $admin = $this->db->query("select email from admin where id_admin='1'")->row();
+        $admin_email = $admin->email;
+        $user_name = $this->input->post('first_name');
+        $user_email = $this->input->post('email');
+
+        //sending email
+        $config = array(
+            'protocol' => 'smtp',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_port' => '465',
+            'smtp_user' => 'bautistaaexpositooo@gmail.com',
+            'smtp_pass' => 'voeb tgvn kwvy zquc',
+            'mailtype' => 'html',
+            'wordwrap' => TRUE
+        );
+
+        $user_message = "
+            <html>
+                <head>
+                    <title>Email Verification</title>
+                </head>
+                <body>
+                    <p>Dear ".$user_name",</p>
+                    <p>This email is to confirm that we have received your registrarion information and to verify the email address you have provided</p>
+                    <br>
+                    <h4>
+                        <a href='".base_url() . "register/activate" . $id_user . "/" . $activation_code. "'>Activate Account</a>
+                    </h4>
+                </body>
+            </html>
+        ";
+
+        $admin_message = "
+            <html>
+                <head>
+                    <title>Sign Up Alert</title>
+                </head>
+                <body>
+                    <p>A new user just created an account:</p>
+                    <p>".$user_name."</p>
+                    <p>".$user_email."</p>
+                    <br>
+                </body>
+            </html>
+        ";
     }
+
 }
