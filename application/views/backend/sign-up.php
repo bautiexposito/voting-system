@@ -38,6 +38,20 @@
       <div class="container mt-5">
         <div class="row">
           <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
+
+            <?php if($this->session->flashdata('message')){?>
+              <div class="alert alert-success text-center">
+                <?php echo $this->session->flashdata('message');?>
+              </div>
+              <?php unset($_SESSION['message']);
+            }?>
+
+            <?php if($this->session->flashdata('error')){?>
+              <div class="alert alert-danger text-center">
+                <?php echo $this->session->flashdata('error');?>
+              </div>
+              <?php unset($_SESSION['error']);
+            }?>
            
             <div class="card card-primary">
               <div class="card-header"><h4>Register</h4></div>

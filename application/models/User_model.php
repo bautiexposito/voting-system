@@ -37,7 +37,7 @@ class User_model extends CI_Model {
         $user_name = $this->input->post('first_name');
         $user_email = $this->input->post('email');
 
-        //sending email
+        // Sending Email:
         $config = array(
             'protocol' => 'smtp',
             'smtp_host' => 'ssl://smtp.googlemail.com',
@@ -54,15 +54,16 @@ class User_model extends CI_Model {
                     <title>Email Verification</title>
                 </head>
                 <body>
-                    <p>Dear ".$user_name",</p>
-                    <p>This email is to confirm that we have received your registrarion information and to verify the email address you have provided</p>
+                    <p>Dear " . $user_name . ",</p>
+                    <p>This email is to confirm that we have received your registration information and to verify the email address you have provided.</p>
                     <br>
                     <h4>
-                        <a href='".base_url() . "register/activate" . $id_user . "/" . $activation_code. "'>Activate Account</a>
+                        <a href='" . base_url() . "register/activate/" . $id_user . "/" . $activation_code . "'>Activate Account</a>
                     </h4>
                 </body>
             </html>
         ";
+    
 
         $admin_message = "
             <html>
@@ -77,6 +78,32 @@ class User_model extends CI_Model {
                 </body>
             </html>
         ";
-    }
 
+        $this->load->library('email', $config);
+        $this->email->initialize($config);
+        $this->email->set_newline("\r\n");
+        $this->email->from($config['smtp_user']);
+        $this->email->to($user_email);
+        $this->email->subject('Account Verification');
+        $this->email->message($user_message);
+
+        if($this->email->send()){
+            $this->session->set_flashdata('message', 'An activation mail has been sent to you.');
+            $this->email->clear(TRUE);
+
+            $this->load->library('email', $config);
+            $this->email->initialize($config);
+            $this->email->set_newline("\r\n");
+            $this->email->from($config['smtp_user']);
+            $this->email->to($admin_email);
+            $this->email->subject('New Sign Up Alert');
+            $this->email->message($admin_message);
+
+            $this->email->send();
+        } else{
+            $this->session->set_flashdata('message', $this->email->print_debugger());
+        }
+
+        redirect('register');
+    }
 }
