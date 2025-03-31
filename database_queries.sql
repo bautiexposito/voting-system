@@ -26,3 +26,15 @@ CREATE TABLE wallet_balance (
     pesos_balance FLOAT NOT NULL,
     PRIMARY KEY (id_wallet)
 );
+
+CREATE TABLE admin (
+    id_admin INT(11) NOT NULL AUTO_INCREMENT,
+    admin_name LONGTEXT NOT NULL,
+    first_name LONGTEXT NOT NULL,
+    last_name LONGTEXT NOT NULL,
+    email LONGTEXT NOT NULL,
+    password LONGTEXT NOT NULL,
+    created_at LONGTEXT NOT NULL,
+    login_status INT(11) NOT NULL,
+    PRIMARY KEY (id_admin)
+);
