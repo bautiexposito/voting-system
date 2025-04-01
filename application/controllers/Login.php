@@ -7,4 +7,25 @@ class Login extends CI_Controller {
 		$this->load->view('backend/sign-in');
 	}
 
+	public function validateLogin(){
+		$authModel = $this->auth_model->authLoginFunction();
+
+		$loginType = $this->session->userdata('login_type');
+
+		if(!$authModel){
+			$this->session->set_flashdata('message', 'Wrong login credentials');
+			redirect(base_url() . 'login', 'refresh');
+		}
+
+		if($loginType == 'user'){
+			$this->session->set_flashdata('message', 'Login Successful');
+			redirect(base_url() . 'user/dashboard', 'refresh');
+		}
+
+		if($loginType == 'admin'){
+			$this->session->set_flashdata('message', 'Login Successful');
+			redirect(base_url() . 'usadminer/dashboard', 'refresh');
+		}
+	}
+
 }
