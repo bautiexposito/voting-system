@@ -24,7 +24,7 @@ class Login extends CI_Controller {
 
 		if($loginType == 'admin'){
 			$this->session->set_flashdata('message', 'Login Successful');
-			redirect(base_url() . 'usadminer/dashboard', 'refresh');
+			redirect(base_url() . 'admin/dashboard', 'refresh');
 		}
 	}
 

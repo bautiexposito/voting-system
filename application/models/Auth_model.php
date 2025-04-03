@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User_model extends CI_Model {
+class Auth_model extends CI_Model {
 
     function __construct(){
         parent::__construct();
@@ -22,6 +22,7 @@ class User_model extends CI_Model {
             $this->session->set_userdata('login_type', 'user');
             $this->session->set_userdata('id_user', $row->id_user);
             $this->session->set_userdata('username', $row->first_name);
+            $this->session->set_userdata('activation_status', $row->activation_status);
             $this->session->set_userdata('useremail', $row->email);
 
             return $this->db->set('login_status', ('1'))
@@ -37,6 +38,7 @@ class User_model extends CI_Model {
 
             $this->session->set_userdata('login_type', 'admin');
             $this->session->set_userdata('id_admin', $row->id_admin);
+            $this->session->set_userdata('admin_status', '1');
             $this->session->set_userdata('admin_name', $row->first_name);
             $this->session->set_userdata('admin_email', $row->email);
 
