@@ -12,6 +12,8 @@ class User extends CI_Controller {
 	}
 
     function dashboard(){
-        $this->load->view('backend/user/dashboard');
+        $page_data['page_name'] = 'dashboard';
+        $page_data['page_title'] = 'Dashboard';
+        $this->load->view('backend/main', $page_data);
     }
 }

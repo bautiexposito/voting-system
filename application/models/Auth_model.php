@@ -31,10 +31,10 @@ class Auth_model extends CI_Model {
         }
 
         // Setting loging for admin
-        $queryUser = $this->db->get_where('admin', array('email' => $email, 'password' => Sha1($password)));
+        $queryAdmin = $this->db->get_where('admin', array('email' => $email, 'password' => Sha1($password)));
 
-        if($queryUser->num_rows() > 0){
-            $row = $queryUser->row();
+        if($queryAdmin->num_rows() > 0){
+            $row = $queryAdmin->row();
 
             $this->session->set_userdata('login_type', 'admin');
             $this->session->set_userdata('id_admin', $row->id_admin);

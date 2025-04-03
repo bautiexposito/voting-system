@@ -12,6 +12,8 @@ class Admin extends CI_Controller {
 	}
 
     function dashboard(){
-        $this->load->view('backend/admin/dashboard');
+        $page_data['page_name'] = 'dashboard';
+        $page_data['page_title'] = 'Dashboard';
+        $this->load->view('backend/main', $page_data);
     }
 }
